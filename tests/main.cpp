@@ -1,6 +1,15 @@
-#include <string>
+#include "QuadraticEquation.h"
 
 #include <gtest/gtest.h>
+
+#include <string>
+
+TEST(QE, Case_1_0_1)
+{
+    auto roots = QuadraticEquation::solve(1, 0, 1);
+
+    EXPECT_EQ(roots.size(), 0);
+}
 
 int main(int argc, char** argv)
 {

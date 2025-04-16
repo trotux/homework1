@@ -4,5 +4,5 @@
 
 std::vector<double> QuadraticEquation::solve(double a, double b, double c)
 {
-    return {};
+    return {0, 0};
 }
