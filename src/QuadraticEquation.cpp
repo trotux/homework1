@@ -6,6 +6,7 @@
 
 std::vector<double> QuadraticEquation::solve(double a, double b, double c)
 {
+    double epsilon = 0.001;
     if (FP_ZERO == std::fpclassify(a))
     {
          throw std::runtime_error("\"a\" should no be equal zero");
@@ -27,7 +28,8 @@ std::vector<double> QuadraticEquation::solve(double a, double b, double c)
     }
 
     auto d = pow(b, 2) - 4*a*c;
-    if (FP_ZERO == std::fpclassify(d))
+
+    if ((d - 0) < epsilon)
     {
         double x = - b / (2 * a);
         return {x, x};
