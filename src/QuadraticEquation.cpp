@@ -2,9 +2,15 @@
 
 #include <vector>
 #include <cmath>
+#include <stdexcept>
 
 std::vector<double> QuadraticEquation::solve(double a, double b, double c)
 {
+    if (FP_ZERO == std::fpclassify(a))
+    {
+         throw std::runtime_error("\"a\" should no be equal zero");
+    }
+
     if (FP_ZERO == std::fpclassify(b))
     {
         double tmp = 0 - c/a;
