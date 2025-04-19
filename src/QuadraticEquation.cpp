@@ -20,5 +20,12 @@ std::vector<double> QuadraticEquation::solve(double a, double b, double c)
         }
     }
 
+    auto d = pow(b, 2) - 4*a*c;
+    if (FP_ZERO == std::fpclassify(d))
+    {
+        double x = - b / (2 * a);
+        return {x, x};
+    }
+
     return {0, 0};
 }
