@@ -29,6 +29,10 @@ TEST(QE, Case_1_2_1)
     EXPECT_DOUBLE_EQ(roots[1], -1);
 }
 
+TEST(QE, Case_0_2_1)
+{
+    EXPECT_ANY_THROW(auto roots = QuadraticEquation::solve(0, 2, 1));
+}
 
 int main(int argc, char** argv)
 {
