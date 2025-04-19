@@ -6,6 +6,16 @@
 
 std::vector<double> QuadraticEquation::solve(double a, double b, double c)
 {
+    if (FP_NAN == std::fpclassify(a) ||
+        FP_INFINITE == std::fpclassify(a) ||
+        FP_NAN == std::fpclassify(b) ||
+        FP_INFINITE == std::fpclassify(b) ||
+        FP_NAN == std::fpclassify(c) ||
+        FP_INFINITE == std::fpclassify(c))
+    {
+         throw std::runtime_error("bad values");
+    }
+
     double epsilon = 0.001;
     if (FP_ZERO == std::fpclassify(a))
     {
